@@ -28,6 +28,146 @@ The project is intended to support the complete product lifecycle:
 
 > **Note:** Eclipse is a distribution and licensing platform. Product owners are responsible for complying with the terms, policies, and laws that apply to the software they publish and the platforms on which it is used.
 
+## Architecture
+
+### System Flow Diagram
+
+```text
+┌─────────────────────────────────────────────────────────────────┐
+│                         ECLIPSE ECOSYSTEM                        │
+└─────────────────────────────────────────────────────────────────┘
+
+┌──────────────┐         ┌──────────────┐         ┌──────────────┐
+│   Creator    │         │   Platform   │         │   Customer   │
+│   (You)      │         │   (Eclipse)  │         │   (User)     │
+└──────────────┘         └──────────────┘         └──────────────┘
+       │                       │                         │
+       │                       │                         │
+       ▼                       ▼                         ▼
+    ┌─────────────────────────────────────────────────────────┐
+    │            PRODUCT PUBLISHING WORKFLOW                   │
+    ├─────────────────────────────────────────────────────────┤
+    │                                                           │
+    │  1. RELEASE PREPARATION                                  │
+    │     ├─ Build & Package                                   │
+    │     ├─ Version Management                                │
+    │     └─ Release Notes                                     │
+    │                                                           │
+    │  2. PUBLISH TO ECLIPSE                                   │
+    │     ├─ Upload Package                                    │
+    │     ├─ Set Channel (Stable/Testing)                      │
+    │     └─ Configure Access Rules                            │
+    │                                                           │
+    │  3. LICENSE & KEY SYSTEM                                 │
+    │     ├─ Generate License Keys                             │
+    │     ├─ Set Expiration & Features                         │
+    │     └─ Associate with Product                            │
+    │                                                           │
+    │  4. CUSTOMER ACTIVATION                                  │
+    │     ├─ Receive Key/License                               │
+    │     ├─ Activate on Platform                              │
+    │     └─ Gain Access to Product                            │
+    │                                                           │
+    └─────────────────────────────────────────────────────────┘
+
+┌──────────────────────┐    ┌──────────────────────┐
+│   RELEASE CHANNELS   │    │    LICENSE STATES    │
+├──────────────────────┤    ├──────────────────────┤
+│ ✓ Stable (Live)      │    │ ✓ Active             │
+│ ✓ Testing (Beta)     │    │ ✓ Expiring Soon      │
+│ ✓ Development        │    │ ✓ Expired            │
+│ ✓ Staging            │    │ ✓ Revoked            │
+└──────────────────────┘    └──────────────────────┘
+
+┌────────────────────────────────────────────────────────────┐
+│              PRODUCT LIFECYCLE MONITORING                   │
+├────────────────────────────────────────────────────────────┤
+│                                                              │
+│  DEPLOYMENT → VALIDATION → MONITORING → UPDATES → SUPPORT  │
+│                                                              │
+└────────────────────────────────────────────────────────────┘
+```
+
+### Data Flow Diagram
+
+```text
+                    ┌─────────────────────┐
+                    │   Creator/Admin     │
+                    └──────────┬──────────┘
+                               │
+                ┌──────────────┼──────────────┐
+                │              │              │
+                ▼              ▼              ▼
+          ┌─────────┐   ┌─────────┐   ┌──────────┐
+          │ Release │   │ License │   │Customer  │
+          │ Manager │   │ Manager │   │Dashboard │
+          └────┬────┘   └────┬────┘   └──────────┘
+               │             │
+               └──────┬──────┘
+                      ▼
+            ┌──────────────────┐
+            │  Eclipse Core    │
+            │  Database        │
+            ├──────────────────┤
+            │ Products         │
+            │ Versions         │
+            │ Licenses         │
+            │ Users            │
+            │ Activations      │
+            └────┬─────────────┘
+                 │
+    ┌────────────┼────────────┐
+    ▼            ▼            ▼
+┌────────┐ ┌──────────┐ ┌──────────┐
+│ API    │ │ Website  │ │Dashboard │
+│Server  │ │Platform  │ │Analytics │
+└────────┘ └──────────┘ └──────────┘
+```
+
+### License Validation Flow
+
+```text
+Customer Input
+     │
+     ▼
+┌─────────────────┐
+│  License Key    │
+└────────┬────────┘
+         │
+         ▼
+┌──────────────────────┐
+│  Validate Format     │
+│  & Checksum          │
+└────────┬─────────────┘
+         │
+      ✓/✗
+      │  │
+      │  └─ INVALID ──┐
+      │               │
+      ▼               │
+┌──────────────────┐  │
+│  Check Database  │  │
+│  & Expiration    │  │
+└────────┬─────────┘  │
+         │            │
+      ✓/✗             │
+      │  │            │
+      │  └─ EXPIRED/REVOKED ──┐
+      │                       │
+      ▼                       │
+┌──────────────────┐          │
+│  Verify Product  │          │
+│  & Features      │          │
+└────────┬─────────┘          │
+         │                    │
+      ✓/✗                     │
+      │  │                    │
+      │  └─ MISMATCH ────┐    │
+      │                 │    │
+      ▼                 ▼    ▼
+   ✓ GRANT ACCESS   ✗ DENY ACCESS
+```
+
 ## Features
 
 ### Release management
