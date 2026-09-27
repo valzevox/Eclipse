@@ -2,23 +2,13 @@
 
 <div align="center">
 
-  <img src="https://img.shields.io/badge/Eclipse-Package%20Publishing-0f172a?style=for-the-badge&logo=github&logoColor=white" alt="Eclipse" />
+## Product Distribution & License Management
 
-  <h3>Release your product with confidence.</h3>
+A professional foundation for publishing digital products, managing releases, and controlling customer access through secure license workflows.
 
-  <p>
-    <strong>Eclipse</strong> is a modern package publishing and key-management toolkit built for teams and creators who want to ship software, protect access, and manage releases cleanly.
-  </p>
-
-  <p>
-    <a href="#-quick-start">Get Started</a>
-    ·
-    <a href="#-features">Features</a>
-    ·
-    <a href="#-usage">Usage</a>
-    ·
-    <a href="#-license">License</a>
-  </p>
+[![Repository](https://img.shields.io/badge/GitHub-valzevox%2FEclipse-181717?style=flat-square&logo=github)](https://github.com/valzevox/Eclipse)
+[![Website](https://img.shields.io/badge/Website-Visit%20Eclipse-2563eb?style=flat-square)](https://m1n6-key-server.vercel.app/)
+[![Status](https://img.shields.io/badge/Status-Active-16a34a?style=flat-square)](https://m1n6-key-server.vercel.app/)
 
 </div>
 
@@ -26,221 +16,147 @@
 
 ## Overview
 
-Eclipse helps you publish and distribute packages in a structured, scalable way. From initial release to activation and access control, the goal is simple: make delivery professional, secure, and easy to manage.
+Eclipse is a product distribution and license-management project for creators who publish digital software and need a clear, reliable way to manage releases and customer access.
 
-Whether you are shipping desktop tools, SaaS bundles, premium software, or developer utilities, Eclipse gives you a clean foundation for:
+The project is intended to support the complete product lifecycle:
 
-- package publishing
-- release management
-- key / license handling
-- access control
-- scalable delivery flow
+- publishing product releases
+- managing versions and release channels
+- issuing and validating license keys
+- controlling access to published products
+- providing customers with a simple activation experience
 
----
-
-## Why Eclipse?
-
-Software publishing should be fast, elegant, and reliable.
-
-Eclipse is designed for creators who want to:
-
-- ship clean product releases
-- manage access with simple key-based flows
-- keep their publishing workflow organized
-- reduce friction between build, release, and distribution
-
-Instead of dealing with messy, custom scripts and manual release steps, Eclipse gives you a clear path from dev to delivery.
-
----
+> **Note:** Eclipse is a distribution and licensing platform. Product owners are responsible for complying with the terms, policies, and laws that apply to the software they publish and the platforms on which it is used.
 
 ## Features
 
-### Product publishing
-- clean release structure
-- versioned package workflows
-- publish-ready ecosystem
-- maintainable developer workflow
+### Release management
 
-### Access & key management
-- license / key generation flow
-- access control templates
-- secure delivery experience
-- easy extension for custom platforms
+- Organize products and versions
+- Support stable and testing release channels
+- Keep publishing workflows consistent
+- Prepare releases for controlled distribution
 
-### Modern release experience
-- fast onboarding
-- simple configuration
-- easy integration into existing product pipelines
-- developer-first architecture
+### License management
 
-### Scalability
-- suitable for small creators and growing product teams
-- extendable for SaaS, desktop, or premium software releases
-- structured around product lifecycle operations
+- Generate product-specific license keys
+- Validate keys before granting access
+- Associate licenses with products and users
+- Support lifecycle states such as active, expired, and revoked
 
----
+### Customer experience
 
-## Architecture
+- Simple activation flow
+- Clear product access status
+- Website-based product information
+- Room for account, notification, and support features
 
-Eclipse is designed around a simple release model:
+### Extensible architecture
 
-1. Build your package
-2. Prepare release metadata
-3. Publish to your delivery pipeline
-4. Manage access and activation
-5. Track version lifecycle
+Eclipse is designed to grow with the product it supports. Future integrations can include dashboards, analytics, automated releases, payment providers, and additional delivery channels.
 
-This creates a cleaner and more maintainable way to ship software than ad hoc manual publishing.
+## Product Website
 
----
+Visit the official website for product information, access, and release updates:
 
-## Quick Start
+**[m1n6-key-server.vercel.app](https://m1n6-key-server.vercel.app/)**
 
-### Install
+## Getting Started
+
+The repository is currently being prepared as the publishing package for the Eclipse product ecosystem.
+
+### Clone the repository
 
 ```bash
-npm install eclipse-package
-# or
-pnpm add eclipse-package
-# or
-yarn add eclipse-package
+git clone https://github.com/valzevox/Eclipse.git
+cd Eclipse
 ```
 
-### Basic usage
+### Install dependencies
 
-```js
-import { Eclipse } from 'eclipse-package';
-
-const app = new Eclipse({
-  appName: 'My Product',
-  version: '1.0.0',
-  environment: 'production'
-});
-
-app.publish();
-```
-
-### Example config
-
-```js
-export default {
-  appName: 'Eclipse',
-  version: '1.0.0',
-  releaseChannel: 'stable',
-  keyMode: 'licensed',
-  allowedProducts: ['desktop', 'web']
-};
-```
-
----
-
-## Usage
-
-### Publishing a release
+When the package manifest is available, install dependencies with the package manager used by the project:
 
 ```bash
-npx eclipse publish --version 1.0.0 --channel stable
+npm install
 ```
 
-### Generate a license or activation key
+### Configure the environment
+
+Create a local environment file based on the variables required by your deployment:
 
 ```bash
-npx eclipse key generate --product my-product --user demo-user
+cp .env.example .env
 ```
 
-### Validate access
+Never commit credentials, private signing keys, database URLs, or production tokens to the repository.
 
-```bash
-npx eclipse validate --key YOUR_KEY
-```
+## Recommended Release Workflow
 
----
+1. Update the package version.
+2. Review the changelog and release notes.
+3. Run the test and build commands.
+4. Publish to the intended release channel.
+5. Validate activation and access flows.
+6. Monitor the release after deployment.
 
-## Project Structure
+## Security
 
-```text
-Eclipse/
-├── src/
-│   ├── core/
-│   ├── keys/
-│   ├── publish/
-│   └── utils/
-├── config/
-├── docs/
-├── tests/
-├── README.md
-├── package.json
-└── LICENSE
-```
+License and release systems handle sensitive data. Recommended practices include:
 
----
+- Store secrets only in environment variables or a managed secret store.
+- Hash or encrypt sensitive license data where appropriate.
+- Validate all input on the server side.
+- Apply rate limits to key generation and validation endpoints.
+- Use HTTPS in every production environment.
+- Keep administrative and customer permissions separate.
+- Rotate credentials and signing keys regularly.
+- Never expose private keys in client-side code or public logs.
 
-## Configuration
-
-Eclipse is designed to be easy to configure and extend.
-
-Typical configuration items include:
-
-- app name
-- version metadata
-- environment
-- key generation mode
-- allowed package targets
-- release channel selection
-
-You can define these in a config file or pass them directly during runtime.
-
----
+If you discover a security issue, please avoid opening a public issue with sensitive details. Contact the repository owner privately first.
 
 ## Roadmap
 
-- secure release publishing flow
-- enhanced activation management
-- better package metadata tooling
-- release analytics and lifecycle monitoring
-- improvements for community and team workflows
-
----
-
-## Security Notes
-
-Eclipse is built around clean release practices and controlled distribution. Always keep:
-
-- private keys protected
-- secrets out of source control
-- environment variables managed securely
-- release channels reviewed before publishing
-
----
+- [ ] Complete the package publishing workflow
+- [ ] Add version and release-channel management
+- [ ] Add license creation and validation APIs
+- [ ] Add customer and administrator dashboards
+- [ ] Add automated release notes
+- [ ] Add usage and release analytics
+- [ ] Add automated tests and continuous integration
+- [ ] Publish package documentation
 
 ## Contributing
 
-Contributions are welcome.
+Contributions and suggestions are welcome.
 
-1. Fork the project
-2. Create your feature branch
-3. Commit your changes
-4. Open a pull request
+1. Fork the repository.
+2. Create a feature branch:
 
-If you are adding features, please keep the codebase simple, readable, and consistent with the project structure.
+   ```bash
+   git checkout -b feature/your-feature
+   ```
 
----
+3. Make focused, documented changes.
+4. Run the available checks locally.
+5. Open a pull request with a clear description of the change.
+
+Please keep pull requests small when possible and explain any configuration or migration changes.
 
 ## License
 
-This project is released under the MIT license.
+No license has been specified yet. Until a license is added to this repository, all rights are reserved by the copyright holder.
 
-See the [LICENSE](LICENSE) file for details.
-
----
+If you intend for others to use, modify, or redistribute this project, add an appropriate `LICENSE` file.
 
 ## Links
 
-- GitHub: [Eclipse](https://github.com/valzevox/Eclipse)
-- Homepage: [m1n6-key-server.vercel.app](https://m1n6-key-server.vercel.app)
+- **Repository:** [github.com/valzevox/Eclipse](https://github.com/valzevox/Eclipse)
+- **Official website:** [m1n6-key-server.vercel.app](https://m1n6-key-server.vercel.app/)
 
 ---
 
 <div align="center">
-  <p><strong>Eclipse</strong> — clean product publishing, release control, and secure access.</p>
+
+**Eclipse — publish products. manage access. ship with confidence.**
+
 </div>
