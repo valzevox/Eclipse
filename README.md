@@ -34,6 +34,19 @@ Whether you require completely out-of-process memory reading, cross-device real-
 
 ---
 
+## 🎬 Live Product Showcases
+
+<div align="center">
+
+| Eclipse External | Eclipse WebRadar | Eclipse Internal |
+| :---: | :---: | :---: |
+| <img src="assets/external_showcase.gif" width="300" style="border-radius: 6px;" /><br><sub><b>External ESP & Aim Matrix</b></sub> | <img src="assets/webradar_showcase.gif" width="300" style="border-radius: 6px;" /><br><sub><b>Real-Time Web & Mobile Radar</b></sub> | <img src="assets/internal_showcase.gif" width="300" style="border-radius: 6px;" /><br><sub><b>In-Process DX11 Chams & Overlays</b></sub> |
+| [🔗 View Repository](https://github.com/valzevox/CS2External) | [🔗 View Repository](https://github.com/valzevox/webradar-cpp) | [🔗 View Repository](https://github.com/valzevox/velocity-fixed) |
+
+</div>
+
+---
+
 ## 🚀 Quick Start Guide (For Users)
 
 ### 1. Download Binary
