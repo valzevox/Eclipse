@@ -1,302 +1,86 @@
-# Eclipse
+# 🌌 Eclipse — Official Release Hub & Distribution Portal
 
 <div align="center">
 
-## Product Distribution & License Management
+### Premier Instrumentation & Competitive Intelligence Suite for Counter-Strike 2
 
-A professional foundation for publishing digital products, managing releases, and controlling customer access through secure license workflows.
+[![Latest Release](https://img.shields.io/github/v/release/valzevox/Eclipse?color=7928CA&label=Official%20Release&style=for-the-badge&logo=github)](https://github.com/valzevox/Eclipse/releases)
+[![Platform](https://img.shields.io/badge/Platform-Windows%20x64-0078D6?style=for-the-badge&logo=windows&logoColor=white)](https://github.com/valzevox/Eclipse/releases)
+[![Website](https://img.shields.io/badge/Portal-m1n6--key--server.vercel.app-2563eb?style=for-the-badge&logo=vercel)](https://m1n6-key-server.vercel.app/)
+[![License Status](https://img.shields.io/badge/Key%20System-Active%20%26%20Online-16a34a?style=for-the-badge)](https://m1n6-key-server.vercel.app/get-key)
 
-[![Repository](https://img.shields.io/badge/GitHub-valzevox%2FEclipse-181717?style=flat-square&logo=github)](https://github.com/valzevox/Eclipse)
-[![Website](https://img.shields.io/badge/Website-Visit%20Eclipse-2563eb?style=flat-square)](https://m1n6-key-server.vercel.app/)
-[![Status](https://img.shields.io/badge/Status-Active-16a34a?style=flat-square)](https://m1n6-key-server.vercel.app/)
+---
+
+### [📥 Download Latest Version (.exe)](https://github.com/valzevox/Eclipse/releases) &nbsp;•&nbsp; [🔑 Get Activation Key](https://m1n6-key-server.vercel.app/get-key) &nbsp;•&nbsp; [🌐 Official Website](https://m1n6-key-server.vercel.app/)
+
+---
 
 </div>
 
+## 📌 About Eclipse Hub
+Welcome to the central **Eclipse Distribution Hub**. This repository serves as the official release and distribution registry for all compiled binaries, updates, and changelogs across the **Eclipse Product Family**.
+
+Whether you require completely out-of-process memory reading, cross-device real-time radar mapping, or engine-synchronized high-performance client rendering, Eclipse delivers industry-grade stability, sub-millisecond execution, and advanced anti-analysis hardening.
+
 ---
 
-## Overview
+## 🌟 The Eclipse Product Ecosystem
 
-Eclipse is a product distribution and license-management project for creators who publish digital software and need a clear, reliable way to manage releases and customer access.
+| Product | Architecture | Description | Source Repository |
+| :--- | :--- | :--- | :--- |
+| **Eclipse External** | Out-of-Process (C++20) | High-speed external suite. Zero DLL injection into game memory. Bone tracking, 3D ESP, vector combat math, and anti-reversing protection. | [![Repo](https://img.shields.io/badge/Repo-valzevox%2FCS2External-blue?style=flat-square&logo=github)](https://github.com/valzevox/CS2External) |
+| **Eclipse WebRadar** | Hybrid (C++ / WebSocket / React) | Streams live competitive game state to any web browser (PC, Tablet, Smartphone). Interactive 2D minimap, bomb countdown timer, grenade trajectories. | [![Repo](https://img.shields.io/badge/Repo-valzevox%2Fwebradar--cpp-blue?style=flat-square&logo=github)](https://github.com/valzevox/webradar-cpp) |
+| **Eclipse Internal** | In-Process (DirectX 11 Hooking) | In-process execution framework. Swapchain rendering, chams materials, pixel-perfect movement physics, and real-time tick-synchronized features. | [![Repo](https://img.shields.io/badge/Repo-valzevox%2Fvelocity--fixed-blue?style=flat-square&logo=github)](https://github.com/valzevox/velocity-fixed) |
 
-The project is intended to support the complete product lifecycle:
+---
 
-- publishing product releases
-- managing versions and release channels
-- issuing and validating license keys
-- controlling access to published products
-- providing customers with a simple activation experience
+## 🚀 Quick Start Guide (For Users)
 
-> **Note:** Eclipse is a distribution and licensing platform. Product owners are responsible for complying with the terms, policies, and laws that apply to the software they publish and the platforms on which it is used.
+### 1. Download Binary
+Navigate to our [**Releases Page**](https://github.com/valzevox/Eclipse/releases) and download the latest packaged `.exe` build for your desired product.
 
-## Architecture
+### 2. Obtain an Activation Key
+1. Visit the **Eclipse License Portal**: [https://m1n6-key-server.vercel.app/get-key](https://m1n6-key-server.vercel.app/get-key)
+2. Follow the prompt to claim or renew your session key.
+3. Paste the key into the Eclipse Launcher upon startup.
 
-### System Flow Diagram
+### 3. Launch & Enjoy
+1. Open Counter-Strike 2.
+2. Run the downloaded Eclipse executable as Administrator.
+3. Configure your preferences via the in-game / overlay UI and dominate your matches.
 
-```text
-┌─────────────────────────────────────────────────────────────────┐
-│                         ECLIPSE ECOSYSTEM                        │
-└─────────────────────────────────────────────────────────────────┘
+---
 
-┌──────────────┐         ┌──────────────┐         ┌──────────────┐
-│   Creator    │         │   Platform   │         │   Customer   │
-│   (You)      │         │   (Eclipse)  │         │   (User)     │
-└──────────────┘         └──────────────┘         └──────────────┘
-       │                       │                         │
-       │                       │                         │
-       ▼                       ▼                         ▼
-    ┌─────────────────────────────────────────────────────────┐
-    │            PRODUCT PUBLISHING WORKFLOW                   │
-    ├─────────────────────────────────────────────────────────┤
-    │                                                           │
-    │  1. RELEASE PREPARATION                                  │
-    │     ├─ Build & Package                                   │
-    │     ├─ Version Management                                │
-    │     └─ Release Notes                                     │
-    │                                                           │
-    │  2. PUBLISH TO ECLIPSE                                   │
-    │     ├─ Upload Package                                    │
-    │     ├─ Set Channel (Stable/Testing)                      │
-    │     └─ Configure Access Rules                            │
-    │                                                           │
-    │  3. LICENSE & KEY SYSTEM                                 │
-    │     ├─ Generate License Keys                             │
-    │     ├─ Set Expiration & Features                         │
-    │     └─ Associate with Product                            │
-    │                                                           │
-    │  4. CUSTOMER ACTIVATION                                  │
-    │     ├─ Receive Key/License                               │
-    │     ├─ Activate on Platform                              │
-    │     └─ Gain Access to Product                            │
-    │                                                           │
-    └─────────────────────────────────────────────────────────┘
+## 🛡️ Hardened Security & Anti-Analysis
+All binary deliverables published on **Eclipse** are pre-configured with our enterprise protection pipeline:
+- **Environment & Sandbox Scrubbing:** Detects emulated, sandboxed, and virtual environments.
+- **Tripwire Sentinels:** Hardware breakpoint registers (`DR0`–`DR3`, `DR7`) actively monitored for unauthorized tampering.
+- **Integrity Validation:** Continuous memory hashing and hook triage over critical gate routines.
+- **Timing Probes:** High-resolution `__rdtsc` latency checks to neutralize instruction step-through debugging.
 
-┌──────────────────────┐    ┌──────────────────────┐
-│   RELEASE CHANNELS   │    │    LICENSE STATES    │
-├──────────────────────┤    ├──────────────────────┤
-│ ✓ Stable (Live)      │    │ ✓ Active             │
-│ ✓ Testing (Beta)     │    │ ✓ Expiring Soon      │
-│ ✓ Development        │    │ ✓ Expired            │
-│ ✓ Staging            │    │ ✓ Revoked            │
-└──────────────────────┘    └──────────────────────┘
+---
 
-┌────────────────────────────────────────────────────────────┐
-│              PRODUCT LIFECYCLE MONITORING                   │
-├────────────────────────────────────────────────────────────┤
-│                                                              │
-│  DEPLOYMENT → VALIDATION → MONITORING → UPDATES → SUPPORT  │
-│                                                              │
-└────────────────────────────────────────────────────────────┘
-```
+## 📦 Version History & Release Channels
 
-### Data Flow Diagram
+| Channel | Status | Description |
+| :--- | :--- | :--- |
+| **Stable (Latest)** | [![Release](https://img.shields.io/github/v/release/valzevox/Eclipse?label=Download&style=flat-square)](https://github.com/valzevox/Eclipse/releases) | Recommended for competitive play. Thoroughly validated against current game updates. |
+| **Nightly / Beta** | `Active` | Pre-release builds containing experimental features and early offset sync. |
 
-```text
-                    ┌─────────────────────┐
-                    │   Creator/Admin     │
-                    └──────────┬──────────┘
-                               │
-                ┌──────────────┼──────────────┐
-                │              │              │
-                ▼              ▼              ▼
-          ┌─────────┐   ┌─────────┐   ┌──────────┐
-          │ Release │   │ License │   │Customer  │
-          │ Manager │   │ Manager │   │Dashboard │
-          └────┬────┘   └────┬────┘   └──────────┘
-               │             │
-               └──────┬──────┘
-                      ▼
-            ┌──────────────────┐
-            │  Eclipse Core    │
-            │  Database        │
-            ├──────────────────┤
-            │ Products         │
-            │ Versions         │
-            │ Licenses         │
-            │ Users            │
-            │ Activations      │
-            └────┬─────────────┘
-                 │
-    ┌────────────┼────────────┐
-    ▼            ▼            ▼
-┌────────┐ ┌──────────┐ ┌──────────┐
-│ API    │ │ Website  │ │Dashboard │
-│Server  │ │Platform  │ │Analytics │
-└────────┘ └──────────┘ └──────────┘
-```
+> 🔔 **Auto-Notification:** Star and Watch this repository with **"Custom -> Releases"** to receive instant GitHub notifications whenever a new executable version is published!
 
-### License Validation Flow
+---
 
-```text
-Customer Input
-     │
-     ▼
-┌─────────────────┐
-│  License Key    │
-└────────┬────────┘
-         │
-         ▼
-┌──────────────────────┐
-│  Validate Format     │
-│  & Checksum          │
-└────────┬─────────────┘
-         │
-      ✓/✗
-      │  │
-      │  └─ INVALID ──┐
-      │               │
-      ▼               │
-┌──────────────────┐  │
-│  Check Database  │  │
-│  & Expiration    │  │
-└────────┬─────────┘  │
-         │            │
-      ✓/✗             │
-      │  │            │
-      │  └─ EXPIRED/REVOKED ──┐
-      │                       │
-      ▼                       │
-┌──────────────────┐          │
-│  Verify Product  │          │
-│  & Features      │          │
-└────────┬─────────┘          │
-         │                    │
-      ✓/✗                     │
-      │  │                    │
-      │  └─ MISMATCH ────┐    │
-      │                 │    │
-      ▼                 ▼    ▼
-   ✓ GRANT ACCESS   ✗ DENY ACCESS
-```
-
-## Features
-
-### Release management
-
-- Organize products and versions
-- Support stable and testing release channels
-- Keep publishing workflows consistent
-- Prepare releases for controlled distribution
-
-### License management
-
-- Generate product-specific license keys
-- Validate keys before granting access
-- Associate licenses with products and users
-- Support lifecycle states such as active, expired, and revoked
-
-### Customer experience
-
-- Simple activation flow
-- Clear product access status
-- Website-based product information
-- Room for account, notification, and support features
-
-### Extensible architecture
-
-Eclipse is designed to grow with the product it supports. Future integrations can include dashboards, analytics, automated releases, payment providers, and additional delivery channels.
-
-## Product Website
-
-Visit the official website for product information, access, and release updates:
-
-**[m1n6-key-server.vercel.app](https://m1n6-key-server.vercel.app/)**
-
-## Getting Started
-
-The repository is currently being prepared as the publishing package for the Eclipse product ecosystem.
-
-### Clone the repository
-
-```bash
-git clone https://github.com/valzevox/Eclipse.git
-cd Eclipse
-```
-
-### Install dependencies
-
-When the package manifest is available, install dependencies with the package manager used by the project:
-
-```bash
-npm install
-```
-
-### Configure the environment
-
-Create a local environment file based on the variables required by your deployment:
-
-```bash
-cp .env.example .env
-```
-
-Never commit credentials, private signing keys, database URLs, or production tokens to the repository.
-
-## Recommended Release Workflow
-
-1. Update the package version.
-2. Review the changelog and release notes.
-3. Run the test and build commands.
-4. Publish to the intended release channel.
-5. Validate activation and access flows.
-6. Monitor the release after deployment.
-
-## Security
-
-License and release systems handle sensitive data. Recommended practices include:
-
-- Store secrets only in environment variables or a managed secret store.
-- Hash or encrypt sensitive license data where appropriate.
-- Validate all input on the server side.
-- Apply rate limits to key generation and validation endpoints.
-- Use HTTPS in every production environment.
-- Keep administrative and customer permissions separate.
-- Rotate credentials and signing keys regularly.
-- Never expose private keys in client-side code or public logs.
-
-If you discover a security issue, please avoid opening a public issue with sensitive details. Contact the repository owner privately first.
-
-## Roadmap
-
-- [ ] Complete the package publishing workflow
-- [ ] Add version and release-channel management
-- [ ] Add license creation and validation APIs
-- [ ] Add customer and administrator dashboards
-- [ ] Add automated release notes
-- [ ] Add usage and release analytics
-- [ ] Add automated tests and continuous integration
-- [ ] Publish package documentation
-
-## Contributing
-
-Contributions and suggestions are welcome.
-
-1. Fork the repository.
-2. Create a feature branch:
-
-   ```bash
-   git checkout -b feature/your-feature
-   ```
-
-3. Make focused, documented changes.
-4. Run the available checks locally.
-5. Open a pull request with a clear description of the change.
-
-Please keep pull requests small when possible and explain any configuration or migration changes.
-
-## License
-
-No license has been specified yet. Until a license is added to this repository, all rights are reserved by the copyright holder.
-
-If you intend for others to use, modify, or redistribute this project, add an appropriate `LICENSE` file.
-
-## Links
-
-- **Repository:** [github.com/valzevox/Eclipse](https://github.com/valzevox/Eclipse)
-- **Official website:** [m1n6-key-server.vercel.app](https://m1n6-key-server.vercel.app/)
+## 🌐 Official Links & Community
+- **Official Web Portal:** [https://m1n6-key-server.vercel.app](https://m1n6-key-server.vercel.app)
+- **Key & Subscription System:** [https://m1n6-key-server.vercel.app/get-key](https://m1n6-key-server.vercel.app/get-key)
+- **Releases & Binary Downloads:** [https://github.com/valzevox/Eclipse/releases](https://github.com/valzevox/Eclipse/releases)
 
 ---
 
 <div align="center">
 
-**Eclipse — publish products. manage access. ship with confidence.**
+**Eclipse © 2026 — Next-Generation Competitive Software Intelligence.**  
+*All trademarks and brand names belong to their respective owners.*
 
 </div>
